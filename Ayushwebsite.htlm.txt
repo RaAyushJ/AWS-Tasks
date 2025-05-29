@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class Main {
+    public static boolean isBipartite(List<List<Integer>> graph) {
+        int n = graph.size();
+        int[] color = new int[n]; // 0: uncolored, 1: set A, -1: set B
+
+        for (int i = 0; i < n; i++) {
+            if (color[i] == 0) {
+                if (!dfs(graph, i, 1, color)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private static boolean dfs(List<List<Integer>> graph, int node, int c, int[] color) {
+        color[node] = c;
+
+        for (int neighbor : graph.get(node)) {
+            if (color[neighbor] == c) {
+                return false; // Found an edge within the same set
+            }
+            if (color[neighbor] == 0 && !dfs(graph, neighbor, -c, color)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        List<List<Integer>> graph = new ArrayList<>(n);
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < n; i++) {
+            int u = scanner.nextInt();
+            int v = scanner.nextInt();
+            graph.get(u).add(v);
+            graph.get(v).add(u); // For undirected graphs
+        }
+
+        boolean result = isBipartite(graph);
+        System.out.println("Is the graph bipartite? " + result);
+
+        scanner.close();
+    }
+}
