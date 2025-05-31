@@ -19,9 +19,7 @@ Contents
 - Created an EC2 instance using AWS Free Tier (`t2.micro`)
 - Converted key pair to `.ppk` format for PuTTY
 - Connected to the instance and installed dependencies
-- Created and deployed a simple Flask application:
-
-- ```python
+- Created and deployed a simple Flask application:```python
 from flask import Flask
 app = Flask(__name__)
 
@@ -32,6 +30,7 @@ def hello_world():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     Verified that the Flask app was accessible via the public IP.
+
 
 ## Experiment 2: Auto Scaling with Launch Template and AMI
 
