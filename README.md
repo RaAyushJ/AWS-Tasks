@@ -4,17 +4,17 @@ This repository contains a series of AWS-based lab experiments completed as part
 
 ---
 
-## 📁 Contents
+Contents
 
-- [Experiment 1: EC2 Instance Creation and Flask App Deployment](#experiment-1-ec2-instance-creation-and-flask-app-deployment)
-- [Experiment 2: Auto Scaling with Launch Template and AMI](#experiment-2-auto-scaling-with-launch-template-and-ami)
-- [Experiment 3: IAM Role & Policy Creation using JSON](#experiment-3-iam-role--policy-creation-using-json)
-- [Experiment 4: Static Website Hosting using Amazon S3](#experiment-4-static-website-hosting-using-amazon-s3)
-- [Experiment 5: RDS Database Creation & Migration](#experiment-5-rds-database-creation--migration)
+- [Experiment 1: EC2 Instance Creation and Flask App Deployment]
+- [Experiment 2: Auto Scaling with Launch Template and AMI]
+- [Experiment 3: IAM Role & Policy Creation using JSON]
+- [Experiment 4: Static Website Hosting using Amazon S3]
+- [Experiment 5: RDS Database Creation & Migration]
 
 ---
 
-## 🧪 Experiment 1: EC2 Instance Creation and Flask App Deployment
+## Experiment 1: EC2 Instance Creation and Flask App Deployment
 
 - Created an EC2 instance using AWS Free Tier (`t2.micro`)
 - Converted key pair to `.ppk` format for PuTTY
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     Verified that the Flask app was accessible via the public IP.
 
-Experiment 2: Auto Scaling with Launch Template and AMI
+## Experiment 2: Auto Scaling with Launch Template and AMI
 
     Created an AMI from a running EC2 instance.
 
@@ -49,7 +49,7 @@ Experiment 2: Auto Scaling with Launch Template and AMI
 
     Verified that auto scaling was functional.
 
-Experiment 3: IAM Role & Policy Creation using JSON
+## Experiment 3: IAM Role & Policy Creation using JSON
 
     Created a custom policy in JSON format to allow starting and stopping of EC2 instances:
 
@@ -73,7 +73,7 @@ Experiment 3: IAM Role & Policy Creation using JSON
 
     Later modified the policy to deny starting instances while allowing descriptions.
 
-Experiment 4: Static Website Hosting using Amazon S3
+## Experiment 4: Static Website Hosting using Amazon S3
 
     Created an S3 bucket and uploaded an HTML file.
 
@@ -89,7 +89,7 @@ Experiment 4: Static Website Hosting using Amazon S3
 
     Website was successfully hosted and accessible via the S3 link.
 
-Experiment 5: RDS Database Creation and Migration
+## Experiment 5: RDS Database Creation and Migration
 
     Created an Amazon RDS instance with required configurations.
 
